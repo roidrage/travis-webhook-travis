@@ -25,7 +25,6 @@ app.post("/webhook", function(httpRequest, httpResponse) {
     json: true,
     body: {
       message: 'Webhook triggered build as part of a build chain',
-      branch: branch,
       config: {
         language: 'node_js',
         node_js: '6.0',
