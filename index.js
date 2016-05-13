@@ -30,6 +30,9 @@ app.post("/webhook", function(httpRequest, httpResponse) {
         script: 'echo Hello World'
       }
     }
-  }, function(error, res, body) {
-  });
+  }, function(error, res, body) {});
+});
+
+app.listen(app.get('port'), function() {
+  console.log('Node app is running on port', app.get('port'));
 });
