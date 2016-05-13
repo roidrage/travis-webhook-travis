@@ -31,7 +31,9 @@ app.post("/webhook", function(httpRequest, httpResponse) {
         script: 'echo Hello World'
       }
     }
-  }, function(error, res, body) {});
+  }, function(error, res, body) {
+    httpResponse.send("Done");
+  });
 });
 
 app.listen(app.get('port'), function() {
