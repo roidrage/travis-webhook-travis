@@ -12,6 +12,8 @@ app.get('/', function(request, response) {
 });
 
 app.post("/webhook", function(httpRequest, httpResponse) {
+  var repoName = "roidrage/travis-slack";
+
   rqst.post({
     url: 'https://api.travis-ci.org/repo/' + encodeURIComponent(repoName) + '/requests',
     headers: {
@@ -22,7 +24,7 @@ app.post("/webhook", function(httpRequest, httpResponse) {
     },
     json: true,
     body: {
-      message: 'Slack-triggered build by ' + httpRequest.body.user_name,
+      message: 'Webhook triggered build as part of a build chain',
       branch: branch,
       config: {
         language: 'node_js',
