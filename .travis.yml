@@ -1,1 +1,5 @@
 script: echo "Success!"
+notifications:
+  webhooks:
+    urls:
+      - https://guarded-headland-41129.herokuapp.com/webhook?next=roidrage%2Ftravis-slack
